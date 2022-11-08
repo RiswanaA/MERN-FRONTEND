@@ -1,0 +1,16 @@
+.Login {
+
+    padding: 10px 0px;
+    background: rgba(95, 158, 160, 0.178);
+    color: #fff;
+
+}
+
+.label {
+
+    color:blue;
+    font-weight: 300;
+    padding: 7px 12px;
+    align-items: center;
+    border-radius: 100px;
+}
