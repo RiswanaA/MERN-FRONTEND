@@ -33,6 +33,9 @@ export default function Owner() {
 
       }])
       alert(response.data);
+      setTimeout(() => {
+        window.location.href='/login'
+      }, 500);
     }).catch(err => alert(err));
    
     navigate('/home');

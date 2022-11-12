@@ -12,8 +12,11 @@ export default function Login() {
       email: email,
       pwd: pwd,
     }).then((response) => {
-
+      localStorage.setItem('user', JSON.stringify(response.data));
       alert(" login success");
+      setTimeout(() => {
+        window.location.href='/carsdisplay'
+      }, 500);
     }).catch(err => alert(err));
   };
   return (
@@ -31,4 +34,3 @@ export default function Login() {
     </div>
   );
 }
-

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BookCars = () => {
-    return <div>BookCars</div>;
+    return <div><h1>BookCars</h1></div>;
 };
 
 export default  BookCars;

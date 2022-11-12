@@ -4,6 +4,10 @@ import {useSelector, useDispatch} from 'react-redux';
 import { getAllCars } from '../redux/actions/carsActions';
 import { Row, Col } from 'antd';
 import Spinner from '../components/Spinner';
+import {  useNavigate } from "react-router-dom";
+import BookCars from './BookCars';
+//import Login from '../pages/Login';
+//import Home from './Home';
 //import { Provider } from 'react-redux';
 //imort store from '../redux/store';
 
@@ -15,12 +19,14 @@ import Spinner from '../components/Spinner';
 //     )
 // }
 
+
 function Cars(){
     const {cars} = useSelector(state => state.carsReducer)
     const {loading} = useSelector(state => state.alertsReducer)
     const dispatch = useDispatch();
-    function clickfn(){
-        alert("car selected");
+    const navigate = useNavigate();
+    const booking = ()=>{
+        navigate('/login');
     }
     useEffect(() => {
         dispatch(getAllCars())
@@ -44,15 +50,16 @@ function Cars(){
                                     <p>Rs. {car.rentPerDay}/- Rent per day</p>
                                 </div>
                                 <div>
-                                    <button className='btn1' onClick={clickfn}>Book Now</button>
+                                    <button className='btn1' onClick={booking}>Book Car Now</button>
                                 </div>
+          
                             </div>
                         </div>
+                       
                     </Col>
                 })}
             </Row>
-
-          
+            
         </DefaultLayout>
        
     );
